@@ -1,0 +1,833 @@
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  @apply box-border overflow-x-hidden m-0 p-0;
+  font-family: "Roboto", sans-serif;
+}
+::-webkit-scrollbar {
+  @apply hidden;
+}
+h1 {
+  @apply text-[4rem];
+}
+h2 {
+  @apply text-[3.4rem];
+}
+h3 {
+  @apply text-[2.7rem];
+}
+h4 {
+  @apply text-[2.2rem];
+}
+h5 {
+  @apply text-[2rem];
+}
+h6 {
+  @apply text-2xl;
+}
+p {
+  @apply text-xl;
+}
+@media (max-width: 1520px) {
+  h1 {
+    @apply text-[3.4rem];
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-[2.5rem];
+  }
+  h4 {
+    @apply text-[2rem];
+  }
+  h5 {
+    @apply text-[1.7rem];
+  }
+  h6 {
+    @apply text-[1.3rem];
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    @apply text-[2.6rem];
+  }
+  h2 {
+    @apply text-[2.3rem];
+  }
+  h3 {
+    @apply text-[2rem];
+  }
+  h4 {
+    @apply text-[1.8rem];
+  }
+  h5 {
+    @apply text-[1.45rem];
+  }
+  h6 {
+    @apply text-[1.15rem];
+  }
+}
+.authPage {
+  @apply flex min-w-[1500px] max-w-[1500px] min-h-screen mx-auto my-0;
+}
+.authPage .container {
+  @apply flex-1 flex flex-col justify-center p-5;
+  background: #fff;
+}
+.authPage .container .header {
+  @apply flex gap-[15px] flex-col text-center mb-[30px];
+}
+.authPage .container .header h3 {
+  @apply text-[1.6rem];
+}
+.authPage .container .header img {
+  @apply w-[300px] h-[120px] mx-auto my-0;
+}
+.authPage .container form {
+  @apply flex flex-col gap-5;
+}
+.authPage .container form .inputTag {
+  @apply flex flex-col gap-2.5;
+}
+.authPage .container form .inputTag div {
+  @apply flex items-center rounded-[7px];
+}
+.authPage .container form .inputTag div input,
+.authPage .container form .inputTag div select {
+  @apply w-full h-full p-2 border-[none];
+  background: #87878778;
+}
+.authPage .container form .inputTag div input:focus,
+.authPage .container form .inputTag div select:focus {
+  outline: none;
+}
+.authPage .container form .inputTag div svg {
+  @apply w-[10%] text-2xl h-full text-white p-2;
+  background: #2d5649;
+}
+.authPage .container form button {
+  @apply text-center font-bold text-white text-[1.2rem] mt-[25px] p-3 rounded-[7px] border-[none];
+  background: #2d5649;
+}
+.authPage .container form a {
+  @apply text-center border font-bold text-[#2d5649] text-[1.2rem] no-underline mt-[25px] p-3 rounded-[7px] border-solid border-[#2d5649];
+}
+.authPage .banner {
+  @apply flex-[2] flex justify-center items-center overflow-y-hidden;
+}
+.authPage .banner img {
+  @apply w-full w-[550px] h-[550px];
+}
+@media (max-width: 1520px) {
+  .authPage {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 830px) {
+  .authPage {
+    @apply min-h-screen h-auto;
+  }
+  .authPage .container {
+    @apply flex-none w-full justify-start px-5 py-10;
+  }
+  .authPage .banner {
+    @apply flex-none hidden;
+  }
+}
+.footerShow {
+  @apply flex justify-between items-center px-[120px] py-[25px];
+  background: #18191c;
+}
+.footerShow div {
+  @apply flex gap-3 text-base text-[#f1f3f6];
+}
+.footerShow div a {
+  @apply text-xl no-underline text-[#f1f3f6] hover:text-[#2d5649] hover:transition-all hover:duration-[0.3s] hover:scale-[1.2];
+}
+.footerHide {
+  @apply hidden;
+}
+@media (max-width: 830px) {
+  .footerShow {
+    @apply px-[45px] py-[25px];
+  }
+}
+@media (max-width: 550px) {
+  .footerShow {
+    @apply flex-col-reverse gap-[25px] text-center;
+  }
+}
+.navbarHide {
+  @apply hidden;
+}
+.heroSection {
+  @apply flex flex-col pt-[75px] pb-[50px] px-0;
+}
+.heroSection .container,
+.heroSection .details {
+  @apply min-w-[1500px] max-w-[1500px] mx-auto my-0;
+}
+.heroSection .container {
+  @apply flex h-[450px] mb-7;
+}
+.heroSection .container .title,
+.heroSection .container .image {
+  @apply flex-1;
+}
+.heroSection .container .title {
+  @apply flex flex-col justify-center;
+}
+.heroSection .container .title h1 {
+  @apply max-w-[600px];
+}
+.heroSection .container .title p {
+  @apply max-w-[600px] mt-6;
+}
+.heroSection .container .image {
+  @apply overflow-hidden;
+}
+.heroSection .container .image img {
+  @apply w-full h-full;
+}
+.heroSection .details {
+  @apply flex justify-between px-0 py-[50px];
+}
+.heroSection .details .card {
+  @apply flex gap-5 items-center w-[220px] px-5 py-2.5 hover:transition-all hover:duration-[0.3s] hover:shadow-[2px_10px_10px_-1px_rgba(0,0,0,0.17)];
+  background: #f1f3f6;
+}
+.heroSection .details .card .icon {
+  @apply text-2xl flex items-center justify-center text-[#2d5649] p-2.5;
+  background: rgb(233, 249, 255);
+}
+.heroSection .details .card .content p:first-child {
+  @apply font-[bold];
+}
+.heroSection .details .card .content p:nth-child(2) {
+  @apply text-sm text-[gray] mt-[5px];
+}
+.heroSection .details .card:hover {
+  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+}
+@media (max-width: 1520px) {
+  .heroSection .container,
+  .heroSection .details {
+    @apply min-w-full p-5;
+  }
+}
+@media (max-width: 1000px) {
+  .heroSection .container {
+    @apply flex-col-reverse relative min-h-[600px];
+  }
+  .heroSection .container .title {
+    @apply z-[1] text-center;
+  }
+  .heroSection .container .title h1,
+  .heroSection .container .title p {
+    @apply max-w-full;
+  }
+  .heroSection .container .image {
+    @apply absolute opacity-60 w-full h-full left-0 top-0;
+  }
+}
+@media (max-width: 950px) {
+  .heroSection .details {
+    @apply flex-wrap gap-[30px] justify-evenly;
+  }
+  .heroSection .details .card {
+    @apply w-[300px] flex-none;
+  }
+}
+@media (max-width: 670px) {
+  .heroSection .details .card {
+    @apply max-w-[350px] min-w-[350px];
+  }
+}
+@media (max-width: 400px) {
+  .heroSection .details .card {
+    @apply min-w-full max-w-full;
+  }
+}
+.howitworks {
+  background: #f1f3f6;
+}
+.howitworks .container {
+  @apply max-w-[1500px] min-w-[1500px] flex flex-col items-center gap-[50px] mx-auto my-0 px-0 py-[50px];
+}
+.howitworks .container .banner {
+  @apply flex justify-between gap-[25px];
+}
+.howitworks .container .banner .card {
+  @apply flex text-center flex-col items-center flex-1 h-[350px] gap-3 justify-center px-[50px] py-[30px];
+  background: #fff;
+}
+.howitworks .container .banner .card:nth-child(2) {
+  @apply text-white;
+  background: #18191c;
+}
+.howitworks .container .banner .card svg {
+  @apply text-3xl text-[#2d5649];
+}
+.howitworks .container .banner .card p:last-child {
+  @apply text-sm text-[gray];
+}
+@media (max-width: 1520px) {
+  .howitworks .container {
+    @apply min-w-full px-5 py-[50px];
+  }
+}
+@media (max-width: 850px) {
+  .howitworks .container .banner {
+    @apply flex-wrap justify-center;
+  }
+  .howitworks .container .banner .card {
+    @apply flex-none w-[400px] h-80;
+  }
+}
+@media (max-width: 480px) {
+  .howitworks .container .banner .card {
+    @apply w-full;
+  }
+}
+.categories {
+  @apply min-w-[1500px] max-w-[1500px] flex flex-col gap-[35px] mx-auto my-0 px-0 py-[50px];
+}
+.categories .banner {
+  @apply flex flex-wrap justify-between gap-[35px] px-0 py-5;
+}
+.categories .banner .card {
+  @apply w-80 flex items-center gap-3 p-5 hover:transition-all hover:duration-[0.3s] hover:shadow-[2px_10px_10px_-1px_rgba(0,0,0,0.17)];
+  background: red;
+  background: #f1f3f6;
+}
+.categories .banner .card:hover {
+  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+}
+.categories .banner .card .icon {
+  @apply text-2xl text-[#2d5649] flex items-center justify-center p-2.5;
+  background: rgb(233, 249, 255);
+}
+.categories .banner .card .text p:nth-child(1) {
+  @apply text-base font-[bold];
+}
+.categories .banner .card .text p:nth-child(2) {
+  @apply text-sm font-light text-[gray];
+}
+@media (max-width: 1520px) {
+  .categories {
+    @apply min-w-full px-5 py-[50px];
+  }
+}
+@media (max-width: 714px) {
+  .categories {
+    @apply items-center;
+  }
+  .categories .banner {
+    @apply justify-center;
+  }
+}
+@media (max-width: 350px) {
+  .categories .banner .card {
+    @apply w-full;
+  }
+}
+.companies {
+  @apply px-0 py-[50px];
+  background: #f1f3f6;
+}
+.companies .container {
+  @apply min-w-[1500px] max-w-[1500px] flex flex-col items-center gap-[35px] mx-auto my-0;
+}
+.companies .container .banner {
+  @apply flex justify-between w-full px-0 py-5;
+}
+.companies .container .banner .card {
+  @apply w-[340px] flex flex-col gap-[15px] p-5 hover:transition-all hover:duration-[0.3s] hover:shadow-[2px_10px_10px_-1px_rgba(0,0,0,0.17)];
+  background: #fff;
+}
+.companies .container .banner .card:hover {
+  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+}
+.companies .container .banner .card .content {
+  @apply flex items-center gap-[15px];
+}
+.companies .container .banner .card .content .icon {
+  @apply text-2xl text-[#2d5649] flex justify-center items-center p-2.5;
+  background: rgb(233, 249, 255);
+}
+.companies .container .banner .card .content .text p:first-child {
+  @apply font-[bold] mb-[5px];
+}
+.companies .container .banner .card .content .text p:last-child {
+  @apply text-[15px] text-[gray];
+}
+.companies .container .banner .card button {
+  @apply text-[#2d5649] font-[bold] text-xl mt-2.5 px-0 py-[7px] border-[none];
+  background: rgb(233, 249, 255);
+}
+@media (max-width: 1520px) {
+  .companies .container {
+    @apply min-w-full px-5 py-0;
+  }
+}
+@media (max-width: 1100px) {
+  .companies .container .banner {
+    @apply flex-col gap-[30px] items-center;
+  }
+  .companies .container .banner .card {
+    @apply w-[420px];
+  }
+}
+@media (max-width: 470px) {
+  .companies .container .banner .card {
+    @apply w-full;
+  }
+}
+.jobs {
+  @apply min-h-screen px-5 py-[50px];
+  background: #f1f3f6;
+}
+.jobs .container {
+  @apply flex flex-col items-center min-w-[1500px] max-w-[1500px] gap-[35px] mx-auto my-0;
+}
+.jobs .container .banner {
+  @apply flex flex-wrap w-full gap-[30px] justify-center px-0 py-[30px];
+}
+.jobs .container .banner .card {
+  @apply no-underline w-80 h-[220px] flex flex-col gap-2.5 justify-center p-5 hover:transition-all hover:duration-[0.3s] hover:shadow-[2px_10px_10px_-1px_rgba(0,0,0,0.17)];
+  background: #fff;
+}
+.jobs .container .banner .card:hover {
+  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+}
+.jobs .container .banner .card p:first-child {
+  @apply font-[bold] text-[1.6rem];
+}
+.jobs .container .banner .card p:nth-child(2) {
+  @apply text-[1.3rem] text-[gray];
+}
+.jobs .container .banner .card p:last-child {
+  @apply text-base text-[gray];
+}
+.jobs .container .banner .card a {
+  @apply no-underline text-xl text-[#2d5649] w-full block text-center p-[7px];
+  background: rgb(233, 249, 255);
+}
+@media (max-width: 1520px) {
+  .jobs .container {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 1060px) {
+  .jobs .container .banner .card {
+    @apply w-[360px];
+  }
+}
+@media (max-width: 795px) {
+  .jobs .container .banner .card {
+    @apply w-full;
+  }
+}
+.jobDetail {
+  @apply px-5 py-[50px];
+  background: #f1f3f6;
+}
+.jobDetail .container {
+  @apply max-w-[1500px] min-w-[1500px] flex flex-col items-center mx-auto my-0;
+}
+.jobDetail .container .banner {
+  @apply w-full min-h-[767px] flex flex-col gap-[25px] justify-center px-0 py-[50px];
+}
+.jobDetail .container .banner p {
+  @apply font-[bold] text-[#2d5649];
+}
+.jobDetail .container .banner p span {
+  @apply text-[#18191c] font-normal;
+}
+.jobDetail .container .banner a {
+  @apply bg-[#2d5649] text-[rgb(233,249,255)] text-xl font-normal no-underline w-fit mt-2.5 px-[30px] py-3 border-[none];
+}
+@media (max-width: 1520px) {
+  .jobDetail .container {
+    @apply min-w-full;
+  }
+}
+.application {
+  @apply flex flex-col;
+}
+.application .container {
+  @apply min-w-[1500px] max-w-[1500px] flex flex-col text-center mx-auto my-0 px-5 py-[50px];
+}
+.application .container form {
+  @apply flex flex-col w-[550px] gap-[25px] mt-[35px] mx-auto my-0 px-5 py-10;
+}
+.application .container form input {
+  @apply text-xl px-1 py-3 border-b-[black] border-[none] border-b border-solid;
+}
+.application .container form textarea {
+  @apply w-full h-[200px] text-xl px-1 py-3;
+}
+.application .container form input:focus,
+.application .container form textarea:focus {
+  outline: none;
+}
+.application .container form button {
+  @apply bg-[#2d5649] text-[rgb(233,249,255)] text-xl font-normal no-underline w-full px-[30px] py-3 border-[none] hover:bg-[#184235] hover:transition-all hover:duration-[0.3s] hover:cursor-pointer;
+}
+@media (max-width: 1520px) {
+  .application .container {
+    @apply min-w-full;
+  }
+  .application .container form {
+    @apply w-full;
+  }
+}
+.my_applications {
+  @apply min-h-[885px] px-5 py-[50px];
+  background: #f1f3f6;
+}
+.my_applications .container {
+  @apply max-w-[1500px] min-w-[1500px] flex flex-col gap-[35px] mx-auto my-0;
+}
+.job_seeker_card {
+  @apply flex items-center px-0 py-5 border-b-[gainsboro] border-b border-solid;
+}
+.job_seeker_card .detail {
+  @apply flex-[3] flex flex-col gap-[5px] flex-[2];
+}
+.job_seeker_card .detail span {
+  @apply font-[bold];
+}
+.job_seeker_card .resume {
+  @apply flex-1 flex flex-col relative h-[250px];
+}
+.job_seeker_card .resume img {
+  @apply w-auto h-full absolute left-0 top-0;
+}
+.job_seeker_card .btn_area {
+  @apply flex-1 flex items-center justify-center;
+}
+.job_seeker_card .btn_area button {
+  @apply text-white text-xl font-medium px-[30px] py-2.5 border-[none];
+  background: #d9534f;
+}
+@media (max-width: 1520px) {
+  .my_applications .container {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 1150px) {
+  .job_seeker_card .detail {
+    @apply flex-1;
+  }
+  .job_seeker_card .resume {
+    @apply flex-1;
+  }
+  .job_seeker_card .btn_area {
+    @apply flex-1;
+  }
+}
+@media (max-width: 850px) {
+  .job_seeker_card {
+    @apply flex-col items-start;
+  }
+  .job_seeker_card .detail {
+    @apply flex-none;
+  }
+  .job_seeker_card .resume {
+    @apply flex-none w-80 mx-0 my-[30px];
+  }
+  .job_seeker_card .btn_area {
+    @apply flex-none;
+  }
+}
+@media (max-width: 360px) {
+  .job_seeker_card,
+  .job_seeker_card .resume {
+    @apply w-full;
+  }
+}
+.job_post {
+  @apply min-h-[870px] flex items-center px-5 py-[50px];
+  background: #f1f3f6;
+}
+.job_post .container {
+  @apply max-w-[1500px] min-w-[1500px] flex flex-col gap-[35px] items-center mx-auto my-0;
+}
+.job_post .container form {
+  @apply w-full flex flex-col gap-[25px];
+}
+.job_post .container form .wrapper {
+  @apply flex gap-[5vw];
+}
+.job_post .container form .wrapper input,
+.job_post .container form .wrapper select {
+  @apply flex-1 text-xl px-1 py-[7px] border-b-[gray] border-[none] border-b border-solid;
+  background: transparent;
+}
+.job_post .container form input,
+.job_post .container form textarea {
+  @apply text-xl w-full px-1 py-[7px] border-b-[gray] border-[none] border-b border-solid;
+  background: transparent;
+}
+.job_post .container form input:focus,
+.job_post .container form .wrapper input:focus,
+.job_post .container form .wrapper select:focus,
+.job_post .container form textarea:focus,
+.job_post .container form .salary_wrapper select:focus {
+  outline: none;
+}
+.job_post .container form .salary_wrapper {
+  @apply flex flex-col gap-2.5;
+}
+.job_post .container form .salary_wrapper p {
+  @apply text-[#d9534f] text-sm font-light;
+}
+.job_post .container form .salary_wrapper select {
+  @apply w-fit text-xl px-1 py-[7px] border-b-[gray] border-[none] border-b border-solid;
+  background: transparent;
+}
+.job_post .container form .salary_wrapper .ranged_salary {
+  @apply flex gap-[5vw];
+}
+.job_post .container form button {
+  @apply w-full text-xl text-white uppercase font-semibold tracking-[2px] px-[30px] py-2.5 border-[none];
+  background: #2d5649;
+}
+@media (max-width: 1520px) {
+  .job_post .container {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 630px) {
+  .job_post .container {
+    @apply min-w-full;
+  }
+  .job_post .container form .wrapper,
+  .job_post .container form .salary_wrapper,
+  .job_post .container form .salary_wrapper .ranged_salary {
+    @apply flex-col gap-5;
+  }
+  .job_post .container form .salary_wrapper select {
+    @apply w-full;
+  }
+}
+.myJobs {
+  @apply min-h-[870px] px-5 py-[50px];
+  background: #f1f3f6;
+}
+.myJobs .container {
+  @apply min-w-[1500px] max-w-[1500px] items-center flex flex-col gap-[35px] mx-auto my-0;
+}
+.myJobs .container .banner {
+  @apply w-full flex flex-wrap gap-5 flex-col;
+}
+.myJobs .container .banner .card {
+  @apply w-full flex gap-5 px-0 py-2.5 border-b-[#18191c] border-b border-solid;
+}
+.myJobs .container .banner .card .content {
+  @apply flex-[3] flex gap-5;
+}
+.myJobs .container .banner .card .content span {
+  @apply text-xl font-[bold] mr-1.5;
+}
+.myJobs .container .banner .card .content input,
+.myJobs .container .banner .card .content select {
+  @apply text-base text-[#18191c] px-1 py-[7px] border-[none];
+  background: transparent;
+}
+.myJobs .container .banner .card .content input:enabled,
+.myJobs .container .banner .card .content select:enabled {
+  @apply border-b-[gainsboro] border-b border-solid;
+}
+.myJobs .container .banner .card .content input:disabled,
+.myJobs .container .banner .card .content select:disabled {
+  @apply text-[gray];
+}
+.myJobs .container .banner .card .content .short_fields {
+  @apply flex-1 flex flex-col gap-5;
+}
+.myJobs .container .banner .card .content .long_field {
+  @apply flex-[2] flex flex-col gap-5;
+}
+.myJobs .container .banner .card .content .short_fields div,
+.myJobs .container .banner .card .content .long_field div {
+  @apply flex flex-col gap-2.5;
+}
+.myJobs .container .banner .card .content .short_fields div div {
+  @apply flex gap-3 flex-row;
+}
+.myJobs .container .banner .card .content .long_field textarea {
+  @apply text-base text-[#18191c] h-fit px-1 py-[7px] border-[none] disabled:text-[gray] enabled:border-b-[gainsboro] enabled:border-b enabled:border-solid;
+  background: transparent;
+}
+.myJobs .container .banner .card .content .long_field textarea:focus,
+.myJobs .container .banner .card .content input:focus {
+  outline: none;
+}
+.myJobs .container .banner .card .button_wrapper {
+  @apply flex-1 flex flex-col gap-5 items-center justify-center;
+}
+.myJobs .container .banner .card .button_wrapper .edit_btn,
+.myJobs .container .banner .card .button_wrapper .delete_btn {
+  @apply w-[120px] text-[#18191c] text-base font-medium uppercase p-[7px] border-[none];
+  background: #ffc107;
+}
+.myJobs .container .banner .card .button_wrapper .delete_btn {
+  @apply text-[#f1f3f6];
+  background: #d9534f;
+}
+.myJobs .container .banner .card .button_wrapper .check_btn {
+  @apply text-[#184235] border w-[50px] flex justify-center items-center text-xl p-2 rounded-[7px] border-solid border-[#184235] hover:transition-all hover:duration-[0.3s] hover:text-[#f1f3f6];
+  background: transparent;
+}
+.myJobs .container .banner .card .button_wrapper .check_btn:hover {
+  background: #184235;
+}
+.myJobs .container .banner .card .button_wrapper .cross_btn {
+  @apply text-[#d9534f] border w-[50px] flex justify-center items-center text-xl p-2 rounded-[7px] border-solid border-[#d9534f] hover:transition-all hover:duration-[0.3s] hover:text-[#f1f3f6];
+  background: transparent;
+}
+.myJobs .container .banner .card .button_wrapper .cross_btn:hover {
+  background: #d9534f;
+}
+.myJobs .container .banner .card .button_wrapper .edit_btn_wrapper {
+  @apply gap-5 flex;
+}
+@media (max-width: 1520px) {
+  .myJobs .container {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 830px) {
+  .myJobs .container .banner .card {
+    @apply flex-col;
+  }
+  .myJobs .container .banner .card .content {
+    @apply flex-col;
+  }
+  .myJobs .container .banner .card .content .long_field,
+  .myJobs .container .banner .card .content .short_fields {
+    @apply gap-2;
+  }
+  .myJobs .container .banner .card .content .short_fields div,
+  .myJobs .container .banner .card .content .long_fields div {
+    @apply gap-2;
+  }
+}
+nav {
+  @apply px-5 py-0;
+  background: #18191c;
+}
+nav .container {
+  @apply max-w-[1500px] min-w-[1500px] flex justify-between mx-auto my-0;
+}
+nav .container .logo {
+  @apply w-[120px] h-[120px];
+}
+nav .container .logo img {
+  @apply w-full h-full;
+}
+nav .menu {
+  @apply flex gap-[25px] items-center;
+}
+nav .menu button {
+  @apply h-fit border text-[#f1f3f6] text-xl font-light p-[7px] border-solid border-[#f1f3f6] hover:text-[#f1f3f6] hover:transition-all hover:duration-[0.3s] hover:cursor-pointer hover:font-medium hover:border hover:border-solid hover:border-[#184235];
+  background: transparent;
+}
+nav .menu button:hover {
+  background: #184235;
+}
+nav .menu li a {
+  @apply text-[#f1f3f6] no-underline font-light text-xl relative hover:text-[#2d5649] hover:transition-all hover:duration-[0.3s] before:content-[""] before:absolute before:h-px before:w-full before:transition-all before:duration-[0.3s] before:-left-full before:bottom-0 hover:before:transition-all hover:before:duration-[0.3s] hover:before:left-0;
+}
+nav .menu li a::before {
+  background: #184235;
+}
+nav .hamburger {
+  @apply hidden;
+}
+@media (max-width: 1520px) {
+  nav .container {
+    @apply min-w-full;
+  }
+}
+@media (max-width: 1130px) {
+  .page {
+    @apply pt-[120px];
+  }
+  nav {
+    @apply fixed w-full z-10 left-0 top-0;
+  }
+  nav .hamburger {
+    @apply block text-[35px] text-[#f1f3f6];
+  }
+  nav .container {
+    @apply items-center;
+  }
+  .menu {
+    @apply fixed transition-all duration-[0.3s] w-[400px] flex-col h-full justify-center gap-[30px] items-start pl-[25px] -left-full top-[120px];
+    background: #f1f3f6;
+  }
+  nav .show-menu {
+    @apply fixed transition-all duration-[0.3s] w-[400px] flex-col h-full justify-center gap-[30px] items-start shadow-[9px_0px_16px_0px_rgba(0,0,0,0.75)] pl-[25px] left-0 top-[120px];
+    background: #f1f3f6;
+    -webkit-box-shadow: 9px 0px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  }
+  nav .show-menu li a {
+    @apply text-[#184235] font-semibold;
+  }
+  nav .show-menu button {
+    @apply text-[#184235] border font-semibold border-solid border-[#184235] hover:text-[#f1f3f6];
+  }
+  nav .show-menu button:hover {
+    background: #18191c;
+  }
+}
+@media (max-width: 490px) {
+  nav .menu {
+    @apply w-full;
+  }
+}
+.notfound {
+  @apply min-h-[750px];
+}
+.notfound .content {
+  @apply flex flex-col items-center;
+}
+.notfound .content a {
+  @apply text-xl font-medium border text-[#184235] no-underline px-[30px] py-[7px] border-solid border-[#184235] hover:transition-all hover:duration-[0.3s] hover:text-[#f1f3f6];
+  background: transparent;
+}
+.notfound .content a:hover {
+  background: #184235;
+}
+.resume-modal {
+  @apply w-full flex h-full fixed left-0 top-0;
+  background: #00000085;
+}
+.resume-modal .modal-content {
+  @apply w-full h-full flex items-center justify-center relative;
+}
+.resume-modal .modal-content .close {
+  @apply absolute text-[50px] text-[#d9534f] right-9 top-[35px] hover:cursor-pointer;
+}
+.resume-modal .modal-content img {
+  @apply max-w-[550px] h-auto;
+}
+@media (max-width: 1130px) {
+  .resume-modal {
+    @apply z-[11];
+  }
+}
+

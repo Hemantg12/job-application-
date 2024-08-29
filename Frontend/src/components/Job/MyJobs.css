@@ -1,0 +1,9 @@
+.input-disabled-custom {
+    color: black !important;
+    font-weight: bold !important;
+    opacity: 1 !important;
+    cursor: not-allowed;
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    border-color: #d1d5db; /* Tailwind gray-300 */
+  }
+  
